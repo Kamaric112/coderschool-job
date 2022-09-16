@@ -1,5 +1,5 @@
 import { Container } from "@mui/system";
-import React, { useEffect, useState, useContext, createContext } from "react";
+import React, { useEffect, useState } from "react";
 import ResponsiveAppBar from "./Appbar1";
 import jobs from "../jobs.json";
 import BasicCard from "./Contentbox.js";
@@ -7,19 +7,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline, Switch, Typography } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
-import Button from "@mui/material/Button";
-import {
-  Routes,
-  Route,
-  useNavigate,
-  useLocation,
-  Navigate,
-  Link,
-  Outlet,
-} from "react-router-dom";
-import LoginPage from "./LoginPage.js";
-import TestPage from "./LayoutPage.js";
-
+import { Outlet, Link } from "react-router-dom";
 const light = {
   palette: {
     mode: "light",
@@ -97,7 +85,6 @@ function LayoutPage() {
         <Route path="/*" element={<TestPage />}></Route>
         <Route path="login" element={<LoginPage />}></Route>
       </Routes> */}
-      <Outlet />
     </>
   );
 }
