@@ -3,9 +3,6 @@ import { useNavigate, useLocation, Navigate } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 
 function LoginPage() {
-  let navigate = useNavigate();
-  let from = navigate.state?.from?.pathname || "/";
-
   return (
     <Stack sx={{ p: 4, alignItems: "center" }}>
       <LoginForm />
