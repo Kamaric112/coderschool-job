@@ -7,7 +7,6 @@ import Grid from "@mui/material/Unstable_Grid2";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline, Switch, Typography } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
-import { Outlet, Link } from "react-router-dom";
 const light = {
   palette: {
     mode: "light",

@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Chip from "@mui/material/Chip";
 import { AuthContext } from "./LoginPage";
-import { useNavigate, useLocation, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ModalLogin from "./ModalLogin";
 const style = {
   position: "absolute",
@@ -22,7 +22,6 @@ const style = {
 export default function BasicModal({ job }) {
   const [open, setOpen] = React.useState(false);
   let auth = useContext(AuthContext);
-  let location = useLocation();
   const navigate = useNavigate();
 
   const handleOpen = () => {
@@ -75,11 +74,3 @@ export default function BasicModal({ job }) {
     </div>
   );
 }
-
-const CheckLogin = () => {
-  let auth = useContext(AuthContext);
-  let location = useLocation();
-  if ((!auth.user && !auth.password) || !auth.user || !auth.password) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
-  }
-};
