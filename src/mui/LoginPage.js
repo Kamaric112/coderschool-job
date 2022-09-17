@@ -54,6 +54,27 @@ export const RequireAuth = ({ children }) => {
 };
 
 export function LoginForm({ handleClose }) {
+  const commonStyle = {
+    display: "inline-block",
+    font: "bold 1.5rem sans-serif",
+    marginBottom: "0.5rem",
+  };
+
+  const buttonStyle = {
+    display: "inline-block",
+    padding: "0.3em 1.2em",
+    margin: "0 0.1em 0.1em 0",
+    border: "0.16em solid rgba(255,255,255,0)",
+    borderRadius: "2em",
+    boxSizing: "border-box",
+    textDecoration: "none",
+    fontFamily: "sans-serif",
+    fontWeight: "300",
+    color: "rgba(0,0,0,0.35)",
+    textShadow: "0 0.04em 0.04em rgba(0,0,0,0.7)",
+    textAlign: "center",
+    transition: "all 0.2s",
+  };
   let navigate = useNavigate();
   let location = useLocation();
   let auth = useAuth();
@@ -82,15 +103,15 @@ export function LoginForm({ handleClose }) {
   return (
     <div>
       <p>You must log in to view the page at {from}</p>
-
       <form onSubmit={handleSubmit}>
-        <label>
+        <label style={commonStyle}>
           Username: <input name="username" type="text" />
         </label>{" "}
-        <label>
+        <label style={commonStyle}>
           Password <input name="password" type="text" />
         </label>{" "}
-        <button type="submit" onClick={handleClose}>
+        <br />
+        <button type="submit" onClick={handleClose} style={buttonStyle}>
           Login
         </button>
       </form>
@@ -99,6 +120,7 @@ export function LoginForm({ handleClose }) {
         onClick={() => {
           auth.signOut(() => navigate("/"));
         }}
+        style={buttonStyle}
       >
         Logout
       </button>
