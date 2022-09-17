@@ -79,6 +79,9 @@ export function LoginForm({ handleClose }) {
 
   let from = location.state?.from?.pathname || "/";
 
+  const [user, setUser] = useState("abc");
+  const [pass, setPass] = useState("123");
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -102,10 +105,23 @@ export function LoginForm({ handleClose }) {
       <p>You must log in to view the page at {from}</p>
       <form onSubmit={handleSubmit}>
         <label style={commonStyle}>
-          Username: <input name="username" type="text" />
-        </label>{" "}
+          Username:{" "}
+          <input
+            name="username"
+            type="text"
+            value={user}
+            onChange={(event) => setUser(event.onchange.value)}
+          />
+        </label>
+        {""}
         <label style={commonStyle}>
-          Password <input name="password" type="text" />
+          Password{" "}
+          <input
+            name="password"
+            type="text"
+            value={pass}
+            onChange={(event) => setPass(event.onchange.value)}
+          />
         </label>{" "}
         <br />
         <button type="submit" onClick={handleClose} style={buttonStyle}>
