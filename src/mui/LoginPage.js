@@ -52,15 +52,16 @@ export const RequireAuth = ({ children }) => {
 
 export function LoginForm({ handleClose }) {
   const commonStyle = {
-    display: "inline-block",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
     font: "bold 1.5rem sans-serif",
-    marginBottom: "0.5rem",
   };
 
   const buttonStyle = {
     display: "inline-block",
     padding: "0.3em 1.2em",
-    margin: "0 0.1em 0.1em 0",
     border: "0.16em solid rgba(255,255,255,0)",
     borderRadius: "2em",
     boxSizing: "border-box",
@@ -69,8 +70,10 @@ export function LoginForm({ handleClose }) {
     fontWeight: "300",
     color: "rgba(0,0,0,0.35)",
     textShadow: "0 0.04em 0.04em rgba(0,0,0,0.7)",
-    textAlign: "center",
+    textAlign: "right",
     transition: "all 0.2s",
+    alignSelf: "flex-end",
+    marginTop: "-20px",
   };
   let navigate = useNavigate();
   let location = useLocation();
@@ -102,25 +105,25 @@ export function LoginForm({ handleClose }) {
 
   return (
     <div>
-      <p>You must log in to view the page at {from}</p>
-      <form onSubmit={handleSubmit}>
-        <label style={commonStyle}>
+      {/* <p>You must log in to view the page at {from}</p> */}
+      <form onSubmit={handleSubmit} style={commonStyle}>
+        <label>
           Username:{" "}
           <input
             name="username"
             type="text"
             value={user}
-            onChange={(event) => setUser(event.onchange.value)}
+            onChange={(event) => setUser(event.target.value)}
           />
         </label>
         {""}
-        <label style={commonStyle}>
-          Password{" "}
+        <label>
+          Password:{" "}
           <input
             name="password"
             type="text"
             value={pass}
-            onChange={(event) => setPass(event.onchange.value)}
+            onChange={(event) => setPass(event.target.value)}
           />
         </label>{" "}
         <br />
@@ -129,14 +132,14 @@ export function LoginForm({ handleClose }) {
         </button>
       </form>
 
-      <button
+      {/* <button
         onClick={() => {
           auth.signOut(() => navigate("/"));
         }}
         style={buttonStyle}
       >
         Logout
-      </button>
+      </button> */}
     </div>
   );
 }

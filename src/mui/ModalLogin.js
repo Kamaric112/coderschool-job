@@ -42,7 +42,7 @@ export default function ModalLogin({ Title = "Login" }) {
       >
         <Box sx={style}>
           <LoginForm handleClose={handleClose} />
-          <Button onClick={handleClose}>Close Box</Button>
+          <Button onClick={handleClose}>Close Modal</Button>
         </Box>
       </Modal>
     </div>

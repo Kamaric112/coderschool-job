@@ -12,7 +12,6 @@ function App() {
         <Route path="/" element={<LayoutPage />}>
           <Route path="login" element={<LoginPage />}></Route>
           <Route path="/jobs/:id" element={<ProtectedPage />}></Route>
-
           <Route
             path="protected"
             element={

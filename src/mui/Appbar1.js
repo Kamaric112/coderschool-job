@@ -17,7 +17,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Login1", "Login2", "Login3"];
 
 const ResponsiveAppBar = () => {
   let navigate = useNavigate();
@@ -167,6 +167,9 @@ const ResponsiveAppBar = () => {
           </Box>
           {auth?.user ? (
             <>
+              <Typography variant="h6" sx={{ margin: "10px" }}>
+                Hello {auth.user}
+              </Typography>
               <Button
                 variant="contained"
                 onClick={() => auth.signOut(() => navigate("/"))}
